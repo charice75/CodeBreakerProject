@@ -17,7 +17,7 @@ function guess() {
     	setMessage('You Win! :)');
     	showAnswer(true);
     	showReplay();
-    } else if(attempt.value > 10) {
+    } else if(attempt.value >= 10) {
     	setMessage('You Lose! :(');
     	showAnswer(false);
     	showReplay();
@@ -61,11 +61,10 @@ function setMessage(message) {
 
 function showAnswer(success) {
 	let code = document.getElementById('code');
-	
 	if(success) {
-		code.className += 'success';
+		code.className += ' success';
 	} else {
-		code.className += 'failure';
+		code.className += ' failure';
 	}
 	code.innerHTML = answer.value;
 }
